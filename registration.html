@@ -2,12 +2,30 @@
 
 <head>
     <title> Registraion Page </title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+
+            if (name.length < 6 || !/^[a-zA-Z]+$/.test(name)) {
+                alert("Name must be at least 6 characters and contain only alphabets.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <center>
         <h2>Register Now</h2>
-        <form action="registration_process.html" method="POST">
+        <form action="registration_process.html" method="POST" onsubmit="return validateForm()">
             <table frame="box" cellspacing="10">
                 <tr>
                     <td><label for="name">Name: </label></td>
@@ -16,7 +34,7 @@
 
                 <tr>
                     <td><label for="password">Password: </label></td>
-                    <td><input type="password" id="password" name="password" /></td>
+                    <td><input type="password" id="password" name="password" required/></td>
                 </tr>
 
                 <tr>
@@ -31,12 +49,12 @@
 
                 <tr>
                     <td><label for="address">Address: </label></td>
-                    <td><input type="text" id="address" name="address" /></td>
+                    <td><input type="text" id="address" name="address" required/></td>
                 </tr>
 
                 <tr>
                     <td><label for="dob">DOB:</label></td>
-                    <td><input type="date" id="dob" name="dob" /></td>
+                    <td><input type="date" id="dob" name="dob" required/></td>
                 </tr>
 
                 <tr>
