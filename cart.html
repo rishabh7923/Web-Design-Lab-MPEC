@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cart</title>
+    <script>
+        function one() {
+            var a = parseFloat(document.f.t2.value);
+            var b = parseFloat(document.f.t3.value);
+            document.f.a1.value = a * b;
+        }
+
+        function two() {
+            var a = parseFloat(document.f.t5.value);
+            var b = parseFloat(document.f.t6.value);
+            document.f.a2.value = a * b;
+        }
+
+        function add() {
+            var s1 = parseFloat(document.f.a1.value);
+            var s2 = parseFloat(document.f.a2.value);
+            document.f.a3.value = s1 + s2;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f">
+        <table width="100%" border="1" bordercolor="blue">
+            <tr>
+                <th>Book name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="t1" value="" /></td>
+                <td>Rs <input type="text" name="t2" value="" /></td>
+                <td><input type="text" name="t3" value="" /></td>
+                <td>Rs <input type="text" name="a1" value="" onfocus="one()" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="t4" value="" /></td>
+                <td>Rs <input type="text" name="t5" value="" /></td>
+                <td><input type="text" name="t6" value="" /></td>
+                <td>Rs <input type="text" name="a2" value="" onfocus="two()" /></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right"><b>Total Amount</b></td>
+                <td>Rs <input type="text" name="a3" value="" onfocus="add()" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
